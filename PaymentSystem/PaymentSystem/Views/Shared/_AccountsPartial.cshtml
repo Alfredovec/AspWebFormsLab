@@ -1,0 +1,14 @@
+﻿@using Microsoft.AspNet.Identity;
+@using PaymentSystem.Util;
+
+@model IEnumerable<DAO.Model.Account>
+<div class="col-md-12">
+    <h2>Все карты</h2>
+    @Html.CreateBootstrapTable(Url.Action("Accounts", new { Controller = "Json", id = ViewContext.RouteData.Values["id"] }),
+    new List<ColumnItem>
+    {
+        new ColumnItem("Name", Html.DisplayNameFor(model => model.Card.Name)),
+        new ColumnItem("Balance", Html.DisplayNameFor(model => model.Balance)),
+        new ColumnItem("CreationDate", Html.DisplayNameFor(model => model.CreationDate)),
+    }, Url.Action("Details", "Card"), "accountIsBlocked")
+</div>

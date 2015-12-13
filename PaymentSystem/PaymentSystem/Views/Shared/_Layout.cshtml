@@ -1,0 +1,105 @@
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Dashboard">
+    <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/others")
+    @Scripts.Render("~/bundles/chart")
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <section id="container">
+        <!-- **********************************************************************************************************************************************************
+        TOP BAR CONTENT & NOTIFICATIONS
+        *********************************************************************************************************************************************************** -->
+        <!--header start-->
+        <header class="header black-bg">
+            <div class="sidebar-toggle-box">
+                <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Скрыть/Раскрыть меню"></div>
+            </div>
+            <!--logo start-->
+            @Html.ActionLink("ПЛАТЕЖИ ОНЛАЙН", "Index", new { Controller = "Home", area = "" }, new { @class = "logo" })
+            <!--logo end-->
+            <div class="nav notify-row" id="top_menu">
+                <!-- notification start -->
+                <ul class="nav top-menu">
+                    @if (User.IsInRole("Admin"))
+                    {
+                        @Html.Action("Last", "Request")
+                    }
+                </ul>
+                <!-- notification end -->
+            </div>
+            <div class="top-menu">
+                <ul class="nav pull-right top-menu">
+                    <li>
+                        @using (Html.BeginForm("LogOff", "Account", new { area = "" }))
+                        {
+                            @Html.AntiForgeryToken()
+                            <input type="submit" class="logout" value="Выйти" />
+                        }
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <!--header end-->
+        @Html.Action("Index", "Menu")
+        <!-- **********************************************************************************************************************************************************
+            MAIN CONTENT
+            *********************************************************************************************************************************************************** -->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1 main-chart">
+                        @RenderBody()
+                    </div><!-- /col-lg-9 END SECTION MIDDLE -->
+                </div><!--/row -->
+            </section>
+        </section>
+        <!--main content end-->
+        <!--footer start-->
+        <footer class="site-footer">
+            <div class="text-center">
+                &copy; @DateTime.Now.Year — Power by Zadorozhnii
+                <a class="go-top">
+                    <i class="fa fa-angle-up"></i>
+                </a>
+            </div>
+        </footer>
+        <!--footer end-->
+    </section>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/additionScripts")
+    @RenderSection("scripts", required: false)
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if ('@TempData.ContainsKey("SuccessMessage")' == 'True') {
+                swal('@TempData["SuccessMessage"]', "", "success");
+            }
+            var url = '/@ViewContext.RouteData.Values["controller"]/@ViewContext.RouteData.Values["action"]';
+            var res = url.replace(/Home/, '').replace(/\/Index/, '');
+            var selected = $('#sidebar a[href$="' + res + '"]');
+            if (!selected.parent().hasClass('mt')) {
+                selected = selected.parent();
+                selected.parent().css('display', 'block');
+                selected = selected.add(selected.parent().prev());
+            }
+            selected.addClass('active');
+        });
+    </script>
+    <script src="~/Scripts/Custom.js"></script>
+</body>
+</html>

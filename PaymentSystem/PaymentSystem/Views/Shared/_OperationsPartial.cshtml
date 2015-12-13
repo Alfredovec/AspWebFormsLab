@@ -1,0 +1,12 @@
+﻿@using PaymentSystem.Util
+@model IEnumerable<DAO.Model.Operation>
+<div class="col-md-12">
+    <h2>Операции</h2>
+    @Html.CreateBootstrapTable(Url.Action("Operations", new { Controller = "Json", id = ViewBag.AccountId }),
+    new List<ColumnItem>
+    {
+        new ColumnItem("OperationDate", Html.DisplayNameFor(model => model.OperationDate)),
+        new ColumnItem("Amount", Html.DisplayNameFor(model => model.Amount)),
+        new ColumnItem("Type", Html.DisplayNameFor(model => model.Type)),
+    }, Url.Action("Details", "Operation"))
+</div>

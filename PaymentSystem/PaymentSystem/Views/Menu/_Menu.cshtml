@@ -1,0 +1,42 @@
+﻿@using PaymentSystem.Models
+@model IEnumerable<MenuItemViewModel>
+<!-- **********************************************************************************************************************************************************
+MAIN SIDEBAR MENU
+*********************************************************************************************************************************************************** -->
+<!--sidebar start-->
+<aside>
+    <div id="sidebar" class="nav-collapse ">
+        <!-- sidebar menu start-->
+        <ul class="sidebar-menu" id="nav-accordion">
+            @Html.Partial("UserProfilePartial")
+            @foreach (var i in Model)
+            {
+                @CreateMenuItem(i)
+            }
+        </ul>
+        <!-- sidebar menu end-->
+    </div>
+</aside>
+<!--sidebar end-->
+@helper CreateMenuItem(MenuItemViewModel item, bool subItem = false)
+{
+    var isSub = @item.Items.Length != 0;
+    <li class="@(isSub ? "sub-menu" : (subItem ? "" : "mt"))">
+        <a class="" href="@(isSub ? "javascript:;" : item.Link)">
+            @if (!item.FontAwesomeIcon.IsEmpty())
+            {
+                <i class="fa @item.FontAwesomeIcon"></i>
+            }
+            <span>@item.Title</span>
+        </a>
+        @if (isSub)
+        {
+            <ul class="sub">
+                @foreach (var i in item.Items)
+                {
+                    @CreateMenuItem(i, true)
+                }
+            </ul>
+        }
+    </li>
+}
