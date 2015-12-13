@@ -1,0 +1,30 @@
+﻿@using GameStore.Authorization.Infrastructure
+@using GameStore.Web.App_LocalResources
+
+@if (User.Identity.IsAuthenticated)
+{
+    <span>@GlobalRes.Hello</span>
+    if (User.IsInRole("User"))
+    {
+        @User.Identity.GetName()
+    }
+    else
+    {
+        @Html.ActionLink(User.Identity.GetName(), "Manage", new {controller = "Account"})
+    }
+    <span>(</span>
+    @Html.ActionLink(GlobalRes.Exit, "Logout", new { controller = "Account" })
+    <span>)</span>
+}
+else
+{
+    <a href="@Url.Action("Login", new {controller = "Account"})" class="login-button">
+        <img src="~/Images/safe-icon.png"/>
+        @GlobalRes.Login
+    </a>
+    <span> | </span>
+    <a href="@Url.Action("Register", new {controller = "Account"})" class="login-button">
+        <img src="~/Images/safe-icon.png" />
+        @GlobalRes.Register
+    </a>
+}

@@ -1,0 +1,88 @@
+﻿@using GameStore.Authorization.Infrastructure
+@using GameStore.Web.App_LocalResources
+@using GameStore.Web.Models
+@model IEnumerable<CommentViewModel>
+
+@{
+    ViewBag.Title = GlobalRes.Comments;
+}
+<link href="~/Content/comment.css" rel="stylesheet" />
+
+<h2>@GlobalRes.Comments</h2>
+
+<div id="comments">@RenderComments(Model, null, "treeCSS")</div>
+
+<div id="newComment">
+    <h3>@GlobalRes.AddNewComment</h3>
+
+    @if (User.Identity.IsBanned())
+    {
+        <div>
+            @GlobalRes.YouAreBanned
+        </div>
+    }
+    else
+    {
+        @Html.Action("NewComment", new {ViewBag.EditingCommnet.Name, ViewBag.EditingCommnet.Body})
+    }
+</div>
+
+@section Scripts
+{
+    <script src="~/Scripts/comment.js"></script>
+}
+
+@helper RenderComments(IEnumerable<CommentViewModel> comments, CommentViewModel parent, string className)
+{
+    <ul class="@className">
+        @foreach (var i in comments)
+        {
+            <li>
+                <div class="comment" id="@i.Id">
+                    <div class="author">
+                        @i.Name
+                    </div>
+                    <div class="body">
+                        @if (!i.IsDeleted)
+                        {
+                            if (!string.IsNullOrEmpty(i.QuoteText))
+                             {
+                                 <div class="text-quote">
+                                     @i.QuoteName say:
+                                     <quote>
+                                         @i.QuoteText
+                                     </quote>
+                                 </div>
+                             }
+
+                            if (parent != null)
+                             {
+                                 <span><a href="#@parent.Id">[@parent.Name]</a>, </span>
+                             }
+                            @i.Body
+                            <div class="action">
+                                <div commentid="@i.Id" commentauthor="@i.Name" class="answer">@GlobalRes.Answer</div> |
+                                <div commentid="@i.Id" commentauthor="@i.Name" class="quote">@GlobalRes.Quote</div>
+                                @if (User.IsInRole("Moderator"))
+                                {
+                                    <text> |</text>
+                                    @Html.ActionLink(GlobalRes.Ban, "Ban", new {redirectUrl = Request.Path, id = i.Id})
+                                    <text> |</text>
+                                    @Html.ActionLink(GlobalRes.Delete, "Delete", new {redirectUrl = Request.Path, id = i.Id})
+                                }
+                            </div>
+                        }
+                        else
+                        {
+                            <i>@GlobalRes.CommentDeleted</i>
+                        }
+                    </div>
+                </div>
+                @if (i.Children != null)
+                {
+                    @RenderComments(i.Children, i, "")
+                }
+            </li>
+        }
+    </ul>
+}

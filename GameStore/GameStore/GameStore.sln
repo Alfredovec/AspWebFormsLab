@@ -1,0 +1,89 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.Web", "GameStore.Web\GameStore.Web.csproj", "{8DAA207B-B59B-41E9-81BE-008B9C4BB4C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.DAL", "GameStore.DAL\GameStore.DAL.csproj", "{E6754B8A-0038-4AC2-A51F-1DD780BEEF4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.BLL", "GameStore.BLL\GameStore.BLL.csproj", "{1760BA1C-419F-4D15-8E17-68B1704563B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.Models", "GameStore.Models\GameStore.Models.csproj", "{2C2247BD-7F53-4748-B816-56BD5E1FD955}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.Logger", "GameStore.Logger\GameStore.Logger.csproj", "{1BFD844B-B7AC-4A83-A4BE-A59427DB836A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.Test", "GameStore.Test\GameStore.Test.csproj", "{AEB60F07-7564-4FA8-9010-F82F595160F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.Configuration", "GameStore.Configuration\GameStore.Configuration.csproj", "{5E9A0BA4-352B-434B-9D3A-BD6B78973F3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.GameStoreDAL", "GameStore.GameStoreDAL\GameStore.GameStoreDAL.csproj", "{93F9B120-B048-46D2-B722-CAA60A3EDBF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.DALInfrastructure", "GameStore.DALInfrastructure\GameStore.DALInfrastructure.csproj", "{B6AAFA86-A35E-4262-B093-050EEB67778C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.NorthwindDAL", "GameStore.NorthwindDAL\GameStore.NorthwindDAL.csproj", "{8168032A-E8D1-4392-9866-AD7987D60CA6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6D33EB17-349B-4DD1-9436-769AEA5BE126}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameStore.Authorization", "GameStore.Authorization\GameStore.Authorization.csproj", "{3BCE913C-9DFB-4EA5-A926-401645401ADB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8DAA207B-B59B-41E9-81BE-008B9C4BB4C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DAA207B-B59B-41E9-81BE-008B9C4BB4C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DAA207B-B59B-41E9-81BE-008B9C4BB4C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DAA207B-B59B-41E9-81BE-008B9C4BB4C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6754B8A-0038-4AC2-A51F-1DD780BEEF4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6754B8A-0038-4AC2-A51F-1DD780BEEF4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6754B8A-0038-4AC2-A51F-1DD780BEEF4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6754B8A-0038-4AC2-A51F-1DD780BEEF4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1760BA1C-419F-4D15-8E17-68B1704563B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1760BA1C-419F-4D15-8E17-68B1704563B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1760BA1C-419F-4D15-8E17-68B1704563B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1760BA1C-419F-4D15-8E17-68B1704563B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C2247BD-7F53-4748-B816-56BD5E1FD955}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C2247BD-7F53-4748-B816-56BD5E1FD955}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C2247BD-7F53-4748-B816-56BD5E1FD955}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C2247BD-7F53-4748-B816-56BD5E1FD955}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BFD844B-B7AC-4A83-A4BE-A59427DB836A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BFD844B-B7AC-4A83-A4BE-A59427DB836A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BFD844B-B7AC-4A83-A4BE-A59427DB836A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BFD844B-B7AC-4A83-A4BE-A59427DB836A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEB60F07-7564-4FA8-9010-F82F595160F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEB60F07-7564-4FA8-9010-F82F595160F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEB60F07-7564-4FA8-9010-F82F595160F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEB60F07-7564-4FA8-9010-F82F595160F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E9A0BA4-352B-434B-9D3A-BD6B78973F3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E9A0BA4-352B-434B-9D3A-BD6B78973F3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E9A0BA4-352B-434B-9D3A-BD6B78973F3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E9A0BA4-352B-434B-9D3A-BD6B78973F3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93F9B120-B048-46D2-B722-CAA60A3EDBF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93F9B120-B048-46D2-B722-CAA60A3EDBF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93F9B120-B048-46D2-B722-CAA60A3EDBF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93F9B120-B048-46D2-B722-CAA60A3EDBF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6AAFA86-A35E-4262-B093-050EEB67778C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6AAFA86-A35E-4262-B093-050EEB67778C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6AAFA86-A35E-4262-B093-050EEB67778C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6AAFA86-A35E-4262-B093-050EEB67778C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8168032A-E8D1-4392-9866-AD7987D60CA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8168032A-E8D1-4392-9866-AD7987D60CA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8168032A-E8D1-4392-9866-AD7987D60CA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8168032A-E8D1-4392-9866-AD7987D60CA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BCE913C-9DFB-4EA5-A926-401645401ADB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BCE913C-9DFB-4EA5-A926-401645401ADB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BCE913C-9DFB-4EA5-A926-401645401ADB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BCE913C-9DFB-4EA5-A926-401645401ADB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

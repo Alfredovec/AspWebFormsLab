@@ -1,0 +1,45 @@
+﻿@using GameStore.Web.App_LocalResources
+@model GameStore.Web.Models.UserViewModel
+
+@{
+    ViewBag.Title = GlobalRes.LoginHeader;
+}
+
+<h2>@GlobalRes.LoginHeader</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model=>model.RedirectUrl)
+    
+    <fieldset>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsPersistent)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsPersistent)
+            @Html.ValidationMessageFor(model => model.IsPersistent)
+        </div>
+
+        <p>
+            <input type="submit" value="@GlobalRes.Login" />
+        </p>
+    </fieldset>
+}

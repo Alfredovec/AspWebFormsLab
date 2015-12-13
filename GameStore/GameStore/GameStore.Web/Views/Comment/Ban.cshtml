@@ -1,0 +1,29 @@
+﻿@using GameStore.Web.App_LocalResources
+@using GameStore.Web.Models
+@model GameStore.Web.Models.CommentViewModel
+
+@{
+    ViewBag.Title = GlobalRes.Ban;
+}
+
+<h2>@GlobalRes.Ban</h2>
+
+<h3>@GlobalRes.BanPromt</h3>
+<fieldset>
+    <legend>@GlobalRes.Comment</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Body)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Body)
+    </div>
+</fieldset>
+@Html.Partial("BanFormPartial", new BanCommentViewModel{CommentId = Model.Id})

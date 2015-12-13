@@ -1,0 +1,17 @@
+﻿@using GameStore.Web.App_LocalResources
+@{
+    ViewBag.Title = GlobalRes.ManageAdmin;
+}
+
+<h2>@GlobalRes.ManageAdmin</h2>
+
+<ul>
+    <li>@Html.ActionLink(GlobalRes.Users, "Users")</li>
+    <li>@Html.ActionLink(GlobalRes.Publishers, "All", "Publisher")</li>
+    <li>@Html.ActionLink(GlobalRes.Orders, "Index", "Orders")</li>
+    <li>@Html.ActionLink(GlobalRes.History, "History", "Orders")</li>
+    @if (User.IsInRole("Manager"))
+    {
+        <li>@Html.ActionLink("Notificatoins", "ManageNotificationStatus", "Account")</li>
+    }
+</ul>

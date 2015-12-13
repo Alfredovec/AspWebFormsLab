@@ -1,0 +1,18 @@
+﻿@using GameStore.Web.App_LocalResources
+@model IEnumerable<GameStore.Web.Models.OrderDetailViewModel>
+
+@{
+    ViewBag.Title = GlobalRes.PreparePayment;
+}
+
+@if (Model != null)
+{
+    <h2>@GlobalRes.PreparePayment</h2>
+    @Html.Partial("_OrderDetailsPartial")
+    
+    @Html.Action("Payments")
+}
+else
+{
+    @Html.Partial("Empty")
+}

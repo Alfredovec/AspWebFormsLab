@@ -1,0 +1,31 @@
+﻿@using GameStore.Authorization.Infrastructure
+@using GameStore.Web.App_LocalResources
+@model GameStore.Web.Models.CommentViewModel
+
+<form>
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>@GlobalRes.Comment</legend>
+
+        <div id="removeParent">@GlobalRes.ReplyTo <span class="name"></span> <span class="remove">(@GlobalRes.Remove)</span></div>
+        <div id="quoteComment">@GlobalRes.QuoteComment: <span class="name"></span> <span class="remove">(@GlobalRes.Remove)</span></div>
+
+        <div class="editor-label">
+            @GlobalRes.CommentName : @User.Identity.GetName()
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Body)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Body)
+            @Html.ValidationMessageFor(model => model.Body)
+        </div>
+
+        <p>
+            <input type="submit" value="@GlobalRes.Save" id="createComment"/>
+        </p>
+    </fieldset>
+</form>

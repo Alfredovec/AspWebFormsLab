@@ -1,0 +1,63 @@
+﻿@using GameStore.Web.App_LocalResources
+@using GameStore.Web.Utils
+@model GameStore.Web.Models.UserCreateViewModel
+
+@{
+    ViewBag.Title = GlobalRes.Edit;
+}
+
+<h2>@GlobalRes.Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model=>model.Id)
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <div>
+            @Html.DisplayNameFor(model => model.Email) :
+            @Model.Email
+            @Html.HiddenFor(model=>model.Email)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RepeatPassword)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.RepeatPassword)
+            @Html.ValidationMessageFor(model => model.RepeatPassword)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.RoleIds)
+        </div>
+        <div class="editor-field">
+            @Html.ListBoxFor(model => model.RoleIds,
+                SelectedListItemWorker.GenerateSelectListRoles(Model.Roles))
+            @Html.ValidationMessageFor(model => model.RoleIds)
+        </div>
+
+        <p>
+            <input type="submit" value="@GlobalRes.Save"/>
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink(GlobalRes.BackToList, "Users")
+</div>

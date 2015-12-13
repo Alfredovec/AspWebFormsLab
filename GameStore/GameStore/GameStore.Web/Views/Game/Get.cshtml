@@ -1,0 +1,143 @@
+﻿@using GameStore.Web.App_LocalResources
+@using GameStore.Web.Models
+@model GameStore.Web.Models.GameViewModel
+
+@{
+    ViewBag.Title = GlobalRes.Details;
+}
+<link href="~/Content/comment.css" rel="stylesheet" />
+
+<h2>@GlobalRes.Details</h2>
+
+<fieldset>
+    <legend>@GlobalRes.Game</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Key)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Key)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Price)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.UnitsInStock)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UnitsInStock)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Discontinued)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Discontinued)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.PublishedDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PublishedDate)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.CreationDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CreationDate)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.ViewedCount)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ViewedCount)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.PublisherName)
+    </div>
+    <div class="display-field">
+        @if (Model.PublisherName == "unknown")
+        {
+            @Model.PublisherName
+        }
+        else
+        {
+            @Html.ActionLink(Model.PublisherName, "Details", new {controller = "Publisher", companyName = Model.PublisherName})
+        }
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Genres)
+    </div>
+    <div class="display-field">
+        @string.Join(", ", Model.Genres)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.PlatformTypes)
+    </div>
+    <div class="display-field">
+        @string.Join(", ", Model.PlatformTypes)
+    </div>
+
+</fieldset>
+<div id="helpers" style="display: none">
+    <div class="id">@Model.Id</div>
+    <div class="deleted">@GlobalRes.CommentDeleted</div>
+    <div class="answer">@GlobalRes.Answer</div>
+    <div class="quote">@GlobalRes.Quote</div>
+</div>
+
+<div id="comments">
+
+</div>
+
+<div id="newComment">
+    @Html.Partial("_NewCommentAjax", new CommentViewModel())
+</div>
+
+<p>
+    @Html.ActionLink(GlobalRes.Download, "Download", new { gameKey = Model.Key }, new { target = "blank" }) |
+    @Html.ActionLink(GlobalRes.SeeComments, "Comments", new { controller = "Comment" }, new { gameKey = Model.Key }) |
+    @if (User.Identity.IsAuthenticated)
+    {
+        @Html.ActionLink(GlobalRes.BuyGame, "Add", new { controller = "Basket", gameKey = Model.Key }, new { id="buyButton" })
+        <text> |</text>
+    }
+    @if (User.IsInRole("Manager"))
+    {
+        @Html.ActionLink(GlobalRes.Edit, "Update", new { gameKey = Model.Key })
+        <text> |</text>
+        @Html.ActionLink(GlobalRes.Delete, "Remove", new { gameKey = Model.Key })
+        <text> |</text>
+    }
+    @Html.ActionLink(GlobalRes.BackToList, "Index")
+</p>
+
+@section Scripts{
+    <script src="~/Scripts/comment.js"></script>
+<script src="~/Scripts/buyGame.js"></script>
+}

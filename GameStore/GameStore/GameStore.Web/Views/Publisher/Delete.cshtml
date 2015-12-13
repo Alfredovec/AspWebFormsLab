@@ -1,0 +1,42 @@
+﻿@using GameStore.Web.App_LocalResources
+@model GameStore.Web.Models.PublisherViewModel
+
+@{
+    ViewBag.Title = GlobalRes.Delete;
+}
+
+<h2>@GlobalRes.Delete</h2>
+
+<h3>@GlobalRes.AreYouSureToDelete</h3>
+<fieldset>
+    <legend>@GlobalRes.Publisher</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CompanyName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CompanyName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HomePage)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HomePage)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model=>model.Id)
+    <p>
+        <input type="submit" value="@GlobalRes.Delete" /> |
+        @Html.ActionLink(GlobalRes.BackToList, "All")
+    </p>
+}

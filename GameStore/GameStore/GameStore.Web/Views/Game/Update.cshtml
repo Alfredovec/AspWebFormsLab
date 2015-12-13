@@ -1,0 +1,120 @@
+﻿@using GameStore.Web.App_LocalResources
+@using GameStore.Web.Utils
+@model GameStore.Web.Models.GameCreateViewModel
+
+@{
+    ViewBag.Title = GlobalRes.Update;
+}
+
+<h2>@GlobalRes.Update</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>@GlobalRes.Game</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Key)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Key)
+            @Html.ValidationMessageFor(model => model.Key)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DescriptionEn)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DescriptionEn)
+            @Html.ValidationMessageFor(model => model.DescriptionEn)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DescriptionRu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DescriptionRu)
+            @Html.ValidationMessageFor(model => model.DescriptionRu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Price)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Price)
+            @Html.ValidationMessageFor(model => model.Price)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UnitsInStock)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UnitsInStock)
+            @Html.ValidationMessageFor(model => model.UnitsInStock)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Discontinued)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Discontinued)
+            @Html.ValidationMessageFor(model => model.Discontinued)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PublishedDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PublishedDate)
+            @Html.ValidationMessageFor(model => model.PublishedDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PublisherId)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.PublisherId,
+         SelectedListItemWorker.GenerateSelectListPublishers(Model.AllPublishers), "unknown")
+            @Html.ValidationMessageFor(model => model.PublisherId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Genres)
+        </div>
+        <div class="editor-field">
+            @Html.ListBoxFor(model => model.Genres,
+            SelectedListItemWorker.GenerateSelectListGenres(Model.AllGenres))
+            @Html.ValidationMessageFor(model => model.Genres)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PlatformTypes)
+        </div>
+        <div class="editor-field">
+            @Html.ListBoxFor(model => model.PlatformTypes,
+            SelectedListItemWorker.GenerateSelectListPlatformTypes(Model.AllPlatforms))
+            @Html.ValidationMessageFor(model => model.PlatformTypes)
+        </div>
+
+        <p>
+            <input type="submit" value="@GlobalRes.Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink(GlobalRes.BackToGame, "Get", new { gameKey = Model.Key })
+</div>

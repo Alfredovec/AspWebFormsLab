@@ -1,0 +1,51 @@
+﻿.clearfix {
+    clear: both;
+    padding: 0;
+    margin: 0;
+}
+
+.filter-container {
+    width: 30%;
+    float: left;
+    margin-bottom: 15px;
+}
+
+.main {
+    float: left;
+}
+
+.filter {
+    margin: 10px;
+    border: 1px dashed #FCB03F;
+    background-color: rgb(252, 176, 63);
+    text-align: left;
+}
+
+    .filter .title {
+        color: white;
+        text-align: center;
+        border-bottom: 2px solid;
+    }
+
+    .filter > .main-content {
+        overflow-y: scroll;
+        max-height: 200px;
+        width: auto;
+        padding: 15px;
+        padding-right: 30px;
+        background-color: #EFEFEF;
+    }
+
+#pagination button {
+    min-width: 30px;
+}
+
+    #pagination button:hover {
+        background: #c3b6b6;
+    }
+
+    #pagination button.current,
+    #pagination button[disabled] {
+        background-color: #c3b6b6;
+        cursor: default;
+    }

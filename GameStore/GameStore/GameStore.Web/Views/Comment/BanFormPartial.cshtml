@@ -1,0 +1,23 @@
+﻿@using GameStore.Web.App_LocalResources
+@model GameStore.Web.Models.BanCommentViewModel
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model => model.CommentId)
+    <fieldset>
+        <legend>@GlobalRes.Details</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Ban)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Ban)
+            @Html.ValidationMessageFor(model => model.Ban)
+        </div>
+
+        <p>
+            <input type="submit" value="@GlobalRes.Ban" />
+        </p>
+    </fieldset>
+}

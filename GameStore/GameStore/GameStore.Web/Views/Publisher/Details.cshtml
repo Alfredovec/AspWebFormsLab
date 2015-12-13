@@ -1,0 +1,33 @@
+﻿@using GameStore.Web.App_LocalResources
+@model GameStore.Web.Models.PublisherViewModel
+
+@{
+    ViewBag.Title = GlobalRes.Details;
+}
+
+<h2>@GlobalRes.Details</h2>
+
+<fieldset>
+    <legend>@GlobalRes.Publisher</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.CompanyName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CompanyName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HomePage)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HomePage)
+    </div>
+</fieldset>

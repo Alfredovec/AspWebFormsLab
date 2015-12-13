@@ -1,0 +1,53 @@
+﻿@using GameStore.Web.App_LocalResources
+@model GameStore.Web.Models.PublisherCreateViewModel
+
+@{
+    ViewBag.Title = GlobalRes.Create;
+}
+
+<h2>@GlobalRes.Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>@GlobalRes.Publisher</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CompanyName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CompanyName)
+            @Html.ValidationMessageFor(model => model.CompanyName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DescriptionRu)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DescriptionRu)
+            @Html.ValidationMessageFor(model => model.DescriptionRu)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DescriptionEn)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DescriptionEn)
+            @Html.ValidationMessageFor(model => model.DescriptionEn)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HomePage)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HomePage)
+            @Html.ValidationMessageFor(model => model.HomePage)
+        </div>
+
+        <p>
+            <input type="submit" value="@GlobalRes.Create" />
+        </p>
+    </fieldset>
+}

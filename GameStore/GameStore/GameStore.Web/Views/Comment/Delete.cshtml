@@ -1,0 +1,34 @@
+﻿@using GameStore.Web.App_LocalResources
+@model GameStore.Web.Models.CommentViewModel
+
+@{
+    ViewBag.Title = GlobalRes.Delete;
+}
+
+<h2>@GlobalRes.Delete</h2>
+
+<h3>@GlobalRes.CommentDeletePromt</h3>
+<fieldset>
+    <legend>@GlobalRes.Comment</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Body)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Body)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model=>model.Id)
+    <p>
+        <input type="submit" value="@GlobalRes.Delete" />
+    </p>
+}

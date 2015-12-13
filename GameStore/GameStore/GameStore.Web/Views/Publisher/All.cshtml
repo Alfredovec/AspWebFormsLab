@@ -1,0 +1,46 @@
+﻿@using GameStore.Web.App_LocalResources
+@model IEnumerable<GameStore.Web.Models.PublisherViewModel>
+
+@{
+    ViewBag.Title = GlobalRes.Publishers;
+}
+
+<h2>@GlobalRes.Publishers</h2>
+
+<p>
+    @Html.ActionLink(GlobalRes.CreateNewPublisher, "New")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HomePage)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.CompanyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HomePage)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { companyName = item.CompanyName }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,150 @@
+﻿@using GameStore.Web.App_LocalResources
+@model GameStore.Web.Models.GameFilterViewModel
+
+@{
+    ViewBag.Title = GlobalRes.GamesTitle;
+}
+
+@section GameFilter{
+
+    <link href="~/Content/filterGames.css" rel="stylesheet" />
+    <link href="~/Content/slider.css" rel="stylesheet" />
+
+    <h2>@ViewBag.Title</h2>
+
+    <p>
+        @Html.ActionLink(GlobalRes.CreateNewGame, "New")
+    </p>
+
+    <form id="searchForm">
+        <div id="right-sitebar" class="filter-container">
+            <div class="filter">
+                <h3 class="title">@Html.DisplayNameFor(model => model.Genres)</h3>
+                <div class="main-content">
+                    @for (int i = 0; i < Model.Genres.Count(); i++)
+                    {
+                        <div class="item">
+                            <input type="checkbox" value="@Model.Genres[i].Id" name="GenreNames" id="GenreNames[@Model.Genres[i].Id]"
+                                   @(Model.GenreNames != null && Model.GenreNames.Contains(@Model.Genres[i].Id) ? "checked" : "") />
+                            <label for="GenreNames[@Model.Genres[i].Id]">@Model.Genres[i].Name</label>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="filter">
+                <h3 class="title">@Html.DisplayNameFor(model => model.PlatformTypes)</h3>
+                <div class="main-content">
+                    @for (int i = 0; i < Model.PlatformTypes.Count(); i++)
+                    {
+                        <div class="item">
+                            <input type="checkbox" value="@Model.PlatformTypes[i].Id" name="PlatformTypesNames" id="PlatformTypesNames[@Model.PlatformTypes[i].Id]"
+                                   @(Model.PlatformTypesNames != null && Model.PlatformTypesNames.Contains(@Model.PlatformTypes[i].Id) ? "checked" : "") />
+                            <label for="PlatformTypesNames[@Model.PlatformTypes[i].Id]">@Model.PlatformTypes[i].Type</label>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="filter">
+                <h3 class="title">@Html.DisplayNameFor(model => model.Publishers)</h3>
+                <div class="main-content">
+                    @for (int i = 0; i < Model.Publishers.Count(); i++)
+                    {
+                        <div class="item">
+                            <input type="checkbox" value="@Model.Publishers[i].Id" name="PublishersName" id="PublishersName[@Model.Publishers[i].Id]"
+                                   @(Model.PublishersName != null && Model.PublishersName.Contains(@Model.Publishers[i].Id) ? "checked" : "") />
+                            <label for="PublishersName[@Model.Publishers[i].Id]">@Model.Publishers[i].CompanyName</label>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="filter">
+                <h3 class="title">@GlobalRes.Price</h3>
+                <div class="main-content">
+                    @GlobalRes.Price @GlobalRes.From
+                    @Html.EditorFor(model => model.MinPrice)
+                    @GlobalRes.To
+                    @Html.EditorFor(model => model.MaxPrice)
+                    <div id="slider"></div>
+                    @Html.ValidationMessageFor(model => model.MinPrice)
+                    <br />
+                    @Html.ValidationMessageFor(model => model.MaxPrice)
+                </div>
+            </div>
+
+            <div class="filter">
+                <h3 class="title">@Html.DisplayNameFor(model => model.Name)</h3>
+                <div class="main-content">
+                    @Html.TextBoxFor(model => model.Name, new { placeholder = Html.DisplayNameFor(model => model.Name) })
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+            </div>
+
+            <div class="filter">
+                <h3 class="title">@Html.DisplayNameFor(model => model.DateFilter)</h3>
+                <div class="main-content">
+                    @Html.EditorFor(model => model.DateFilter)
+                </div>
+            </div>
+
+            <div class="filter">
+                <h3 class="title">@Html.DisplayNameFor(model => model.OrderType)</h3>
+                <div class="main-content">
+                    @Html.EditorFor(model => model.OrderType)
+                </div>
+            </div>
+
+            <input type="submit" value="@GlobalRes.Filter"/>
+        </div>
+        <div id="center-content" class="main">
+            <div id="loading">
+                <img src="~/Images/@GlobalRes.Loading" />
+            </div>
+
+            <div id="searchResult" style="display: none">
+                <div style="display: none" id="helpers">
+                    <div class="anchor">@Html.ActionLink(GlobalRes.Details, "Get", new {gameKey = "______"})</div>
+                    <div class="prev">@GlobalRes.Prev</div>
+                    <div class="next">@GlobalRes.Next</div>
+                </div>
+
+                <table>
+                    <thead>
+                    <tr>
+                        <th>
+                            @GlobalRes.Key
+                        </th>
+                        <th>
+                            @GlobalRes.GameName
+                        </th>
+                        <th>
+                            @GlobalRes.Description
+                        </th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <!--Html.Action("FilterGames")-->
+            </div>
+
+            @Html.HiddenFor(model => model.PageNumber)
+
+            <div>
+                @Html.DisplayNameFor(model => model.PageSize):
+                @Html.EditorFor(model => model.PageSize)
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </form>
+
+}
+
+@section Scripts
+{
+    <script src="~/Scripts/gamesFilter.js"></script>
+    <script src="~/Scripts/jquery-ui.js"></script>
+}

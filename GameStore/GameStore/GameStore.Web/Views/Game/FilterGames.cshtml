@@ -1,0 +1,24 @@
+﻿@using GameStore.Web.App_LocalResources
+@model GameStore.Web.Models.FilterResultViewModel
+
+
+@Html.Partial("GameListPartial", Model.Games)
+
+@if (Model.TotalPageSize != 1)
+{
+    <div id="pagination">
+        <button class="prev">&lt;&lt;@GlobalRes.Prev</button>
+        @for (int i = 0; i < Model.AwaiblePages.Count(); i++)
+        {
+            bool current = Model.AwaiblePages[i] == Model.PageNumber;
+            <button class="@(current ? "current" : "")" @(current?"disabled":"")>
+                @Model.AwaiblePages[i]
+            </button>
+            if (i != (Model.AwaiblePages.Count() - 1) && Model.AwaiblePages[i + 1] - 1 != Model.AwaiblePages[i])
+             {
+                <span>...</span>
+             }
+        }
+        <button class="next">@GlobalRes.Next&gt;&gt;</button>
+    </div>
+}
