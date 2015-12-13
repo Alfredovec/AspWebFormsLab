@@ -1,0 +1,104 @@
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\obj\Debug\Chart.csprojResolveAssemblyReference.cache
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Chart.dll.config
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Chart.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Chart.pdb
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Antlr3.Runtime.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\AspNet.ScriptManager.bootstrap.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\AspNet.ScriptManager.jQuery.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\EntityFramework.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\EntityFramework.SqlServer.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.AspNet.FriendlyUrls.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.Owin.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.Owin.Security.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.Owin.Security.Google.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.ScriptManager.MSAjax.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.ScriptManager.WebForms.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.Web.Infrastructure.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Newtonsoft.Json.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Owin.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\System.Web.Optimization.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\System.Web.Providers.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\WebGrease.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\System.Web.Optimization.xml
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Antlr3.Runtime.pdb
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Newtonsoft.Json.xml
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.AspNet.FriendlyUrls.xml
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\EntityFramework.xml
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\EntityFramework.SqlServer.xml
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\System.Web.Providers.xml
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.Owin.xml
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.Owin.Security.xml
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.Owin.Security.Google.xml
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\obj\Debug\Chart.dll
+D:\Shanu\Shanu Projects\VisualStudio2013\ASP.NET PIE Chart\ShanuHTML5Chart\Chart\Chart\obj\Debug\Chart.pdb
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Chart.dll.config
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Chart.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Chart.pdb
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Antlr3.Runtime.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\AspNet.ScriptManager.bootstrap.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\AspNet.ScriptManager.jQuery.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\EntityFramework.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\EntityFramework.SqlServer.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.AspNet.FriendlyUrls.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.Owin.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.Owin.Security.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.Owin.Security.Facebook.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.Owin.Security.Google.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.Owin.Security.Twitter.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.ScriptManager.MSAjax.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.ScriptManager.WebForms.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.Web.Infrastructure.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Newtonsoft.Json.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Owin.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\System.Web.Optimization.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\System.Web.Providers.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\WebGrease.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\System.Web.Optimization.xml
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Antlr3.Runtime.pdb
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Newtonsoft.Json.xml
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.AspNet.FriendlyUrls.xml
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\EntityFramework.xml
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\EntityFramework.SqlServer.xml
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\System.Web.Providers.xml
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.Owin.xml
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.Owin.Security.xml
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.Owin.Security.Facebook.xml
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.Owin.Security.Google.xml
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.Owin.Security.Twitter.xml
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\obj\Debug\Chart.csprojResolveAssemblyReference.cache
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\obj\Debug\Chart.dll
+E:\Univer\course3\PASP_Samofalov\Chart\Chart\obj\Debug\Chart.pdb
