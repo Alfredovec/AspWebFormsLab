@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="Chart._Default" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="cphHead">
-    <script src="//d3js.org/d3.v3.min.js"></script>
+    <script src="/Scripts/d3.v3.min.js"></script>
     <script>
         $(document).ready(function() {
             var width = 960,
@@ -82,7 +82,7 @@
 
     <div class="jumbotron">
         <h1 style="text-align: center">Welcome !</h1>
-        <div id="pole">
+        <div id="pole" style="text-align: center">
             
         </div>
     </div>
