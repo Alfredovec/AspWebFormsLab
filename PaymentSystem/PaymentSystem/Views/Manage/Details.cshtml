@@ -1,0 +1,76 @@
+﻿@model DAO.Model.User
+
+@{
+    ViewBag.Title = "Информация о пользователе";
+}
+
+<h2>Информация о пользователе</h2>
+
+<div>
+    <h4>@Model.UserName</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Фото
+        </dt>
+        <dd>
+            <img src="@Url.Action("GetImage", "Account", new{id = Model.Id})"/>
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </dd>
+    </dl>
+    @if (User.IsInRole("Admin") && User.Identity.Name != Model.UserName)
+    {
+        string text, style, href;
+        if (Model.LockoutEnabled)
+        {
+            text = "Разблокировать";
+            style = "btn-success";
+            href = Url.Action("UnBlock", new {Controller = "Account", id = Model.Id});
+        }
+        else
+        {
+            text = "Заблокировать";
+            style = "btn-danger";
+            href = Url.Action("Block", new {Controller = "Account", id = Model.Id});
+        }
+        <br />
+        <button class="btn btn-block btn-default @style" href="@href" id="blockUser">
+            @text
+        </button>
+    }
+
+    @if (User.IsInRole("Admin") || User.IsInRole("Support"))
+    {
+        <div>
+            @Html.Partial("_AccountsPartial", Model.Accounts)
+        </div>
+    }
+</div>
+<p>
+    @if (User.Identity.Name == Model.UserName)
+    {
+        @Html.ActionLink("Редактировать данный", "Edit")
+        <br/>
+        @Html.ActionLink("Изменить пароль", "ChangePassword")
+    }
+</p>

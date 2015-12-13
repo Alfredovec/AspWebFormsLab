@@ -1,0 +1,17 @@
+﻿@using PaymentSystem.Util
+@model DAO.Model.User
+
+@{
+    ViewBag.Title = "Заблокированные пользователи";
+}
+<div class="col-md-12">
+    <h2>Все заблокированные пользователи</h2>
+    @Html.CreateBootstrapTable(Url.Action("BlockedUsers", "Json"),
+    new List<ColumnItem>
+    {
+        new ColumnItem("FirstName",Html.DisplayNameFor(model => model.FirstName)),
+        new ColumnItem("LastName",Html.DisplayNameFor(model => model.LastName)),
+        new ColumnItem("Email",Html.DisplayNameFor(model => model.Email)),
+    }, Url.Action("Details", "Manage"))
+</div>
+

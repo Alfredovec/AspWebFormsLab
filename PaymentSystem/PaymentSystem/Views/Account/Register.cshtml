@@ -1,0 +1,51 @@
+﻿@model PaymentSystem.Models.RegisterViewModel
+@{
+    ViewBag.Title = "Регистрация";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+<div id="login-page">
+    <div class="container">
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-login form-horizontal" }))
+        {
+            <h2 class="form-login-heading">Регистрация</h2>
+            <div class="login-wrap">
+                @Html.AntiForgeryToken()
+                <div>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                </div>
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", placeholder = Html.DisplayNameFor(model => model.Email), autofocus = "" })
+                <div>
+                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                </div>
+                <br>
+                @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", placeholder = Html.DisplayNameFor(model => model.FirstName) })
+                <div>
+                    @Html.ValidationMessageFor(m => m.FirstName, "", new { @class = "text-danger" })
+                </div>
+                <br/>
+                @Html.TextBoxFor(model => model.LastName, new { @class = "form-control", placeholder = Html.DisplayNameFor(model => model.LastName) })
+                <div>
+                    @Html.ValidationMessageFor(m => m.LastName, "", new { @class = "text-danger" })
+                </div>
+                <br/>
+                @Html.TextBoxFor(model => model.PhoneNumber, new { @class = "form-control", placeholder = Html.DisplayNameFor(model => model.PhoneNumber) })
+                <div>
+                    @Html.ValidationMessageFor(m => m.PhoneNumber, "", new { @class = "text-danger" })
+                </div>
+                <br/>
+                @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = Html.DisplayNameFor(model => model.Password) })
+                <div>
+                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                </div>
+                <br />
+                @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control", placeholder = Html.DisplayNameFor(model => model.ConfirmPassword) })
+                <div>
+                    @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                </div>
+                <br />
+                <button class="btn btn-theme btn-block" type="submit"><i class="fa fa-user-plus"></i>Регистрация</button>
+            </div>
+        }
+
+    </div>
+</div>

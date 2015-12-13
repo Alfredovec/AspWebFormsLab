@@ -1,0 +1,18 @@
+﻿@model System.Web.Mvc.HandleErrorInfo
+
+@{
+    ViewBag.Title = "Заблокировано";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+<div id="login-page">
+    <div class="container">
+        <form class="form-login form-horizontal">
+            <h2 class="form-login-heading">Заблокировано.</h2>
+            <div class="login-wrap">
+                <h4 class="text-danger text-center">Эта учетная запись заблокирована. <br/>
+                Попробуйте @Html.ActionLink("еще раз", "Login", "Account") позже.</h4>
+            </div>
+        </form>
+    </div>
+</div>
