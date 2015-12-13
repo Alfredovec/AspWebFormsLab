@@ -1,0 +1,27 @@
+﻿@model IEnumerable<GameStore.Web.Models.OrderViewModel>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerId)
+            </td>
+            <td>@Html.Partial("_OrderDetailsPartial", item.OrderDetails)</td>
+    </tr>
+    }
+
+</table>

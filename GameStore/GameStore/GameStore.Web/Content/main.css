@@ -1,0 +1,298 @@
+﻿body {
+    background-image: url('../Images/background.jpg');
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+#content {
+    background-color: white;
+    width: 980px;
+    margin: auto;
+    -ms-border-radius: 15px;
+    border-radius: 15px;
+    -webkit-box-shadow: grey 1px 1px 10px;
+    -ms-box-shadow: grey 1px 1px 10px;
+    box-shadow: grey 1px 1px 10px;
+}
+
+#top, #main-content {
+    border-bottom: 1px solid #BBBBBB;
+    padding: 15px;
+}
+
+    #top a {
+        color: black;
+    }
+
+    #top .left {
+        font-weight: bold;
+    }
+
+.middle {
+    margin: 20px 30px 0 30px;
+    vertical-align: middle;
+}
+
+.banner {
+    position: relative;
+    padding: 0 15px 45px;
+}
+
+    .banner .poster {
+        -ms-border-radius: 15px;
+        border-radius: 15px;
+        width: 100%;
+    }
+
+    .banner .monitor {
+        position: absolute;
+        right: 30px;
+        bottom: 0;
+    }
+
+.login-button {
+    background-image: url(../Images/bt-background.png);
+    -ms-background-size: 100% 100%;
+    background-size: 100% 100%;
+    width: 150px;
+    display: inline-block;
+    padding: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    color: white;
+    vertical-align: middle;
+}
+
+.middle {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.menu {
+    position: absolute;
+    z-index: 1;
+    bottom: -66px;
+    right: 0;
+}
+
+    .menu > ul > li {
+        display: inline-block;
+        border-right: 1px #999999 solid;
+        color: #CC620C;
+        background-color: rgba(251, 251, 251, 0.82);
+        margin-left: -4px;
+    }
+
+        .menu > ul > li:hover {
+            background-color: rgb(251, 251, 251);
+        }
+
+        .menu > ul > li:first-child {
+            -ms-border-radius: 15px 0 0 15px;
+            border-radius: 15px 0 0 15px;
+        }
+
+        .menu > ul > li:last-child {
+            border-right: none;
+            -ms-border-radius: 0 15px 15px 0;
+            border-radius: 0 15px 15px 0;
+        }
+
+        .menu > ul > li > a {
+            color: #CC620C;
+            text-transform: uppercase;
+            padding: 20px;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+#center-content {
+    width: 69%;
+}
+
+#right-sitebar {
+    float: right;
+    text-align: center;
+    width: 29%;
+}
+
+    #right-sitebar img {
+        display: block;
+        padding-top: 25px;
+        margin: auto;
+    }
+
+.cols {
+    margin: 10px;
+    border-top: 1px dashed #BBBBBB;
+    padding-top: 15px;
+}
+
+.col {
+    float: left;
+    width: 33%;
+    min-height: 345px;
+}
+
+    .col header {
+        padding-left: 10px;
+        height: 30px;
+    }
+
+    .col > .content {
+        margin-right: 15px;
+        padding: 20px;
+        padding-top: 25px;
+        -ms-border-radius: 10px;
+        border-radius: 10px;
+        min-height: 267px;
+    }
+
+    .col .content > .submit {
+        text-align: right;
+        margin-top: 5px;
+    }
+
+    .col.message > .content {
+        background-color: #E9F0D7;
+        padding-right: 30px;
+    }
+
+        .col.message > .content .contact-item {
+            margin-bottom: 5px;
+        }
+
+        .col.message > .content .contact-item {
+            margin-bottom: 8px;
+        }
+
+    .col.message .content input,
+    .col.message .content textarea {
+        display: block;
+        width: 100%;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #BBBBBB;
+        resize: none;
+    }
+
+    .col.message .content textarea {
+        height: 100px;
+    }
+
+    .col.twitter > .content {
+        background-color: #DFEDF1;
+        color: #2F5471;
+    }
+
+        .col.twitter > .content .twit {
+            border-bottom: 1px dashed #BBBBBB;
+            padding-top: 15px;
+            font-size: 15px;
+            background-color: #EFF6F8;
+        }
+
+            .col.twitter > .content .twit:first-child {
+                background-color: transparent;
+                padding-top: 0;
+            }
+
+            .col.twitter > .content .twit > .date {
+                color: #999999;
+                font-size: 11px;
+                margin: 5px;
+                margin-bottom: 10px;
+            }
+
+        .col.twitter > .content a {
+            color: #D5AC31;
+        }
+
+
+    .col.blog > .content {
+        background-color: #F0EDE3;
+        color: #CE9D0B;
+    }
+
+        .col.blog > .content .blog-items .item {
+            border-bottom: 1px dashed #BBBBBB;
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+    .col header .icon {
+        display: inline;
+    }
+
+    .col header .title {
+        font-weight: bold;
+        text-transform: uppercase;
+        display: inline;
+        vertical-align: top;
+        font-size: 20px;
+    }
+
+footer {
+    padding: 20px;
+    color: grey;
+}
+
+footer .footer-menu {
+    width: 245px;
+}
+
+footer .footer-menu h3{
+    margin-top: 0;
+    color: black;
+    font-size: 15px;
+}
+
+footer .footer-menu ul {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+footer .footer-menu ul li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+}
+
+footer .footer-menu ul li a {
+    color: grey;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.clearfix {
+    clear: both;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+}
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+input[type="submit"],
+button {
+    background-color: #FCB03F;
+    color: white;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}

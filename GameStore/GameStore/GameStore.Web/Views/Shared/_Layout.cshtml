@@ -1,0 +1,226 @@
+﻿@using System.Web.Mvc.Html
+@using GameStore.Authorization.Infrastructure
+@using GameStore.Web.App_LocalResources
+@using GameStore.Web.Utils
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html lang="@ViewContext.RouteData.Values["lang"]">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/main.css" rel="stylesheet" />
+</head>
+<body>
+    <div id="content">
+        <header>
+            <div id="top">
+                <div class="left">
+                    @Html.ActionLink(GlobalRes.HomePage, "Index", "Game") |
+                    <a href="#">@GlobalRes.About</a> |
+                    <a href="#">@GlobalRes.Careers</a> |
+                    <a href="#">@GlobalRes.Newsroom</a>
+                </div>
+                <div class="right">
+                    <div style="display: none" id="basketUrl">@Url.Action("Basket","Basket")</div>
+                    @GlobalRes.GameCountTitle: @Html.Action("GetGameCounts", new {controller = "Game"}) |
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        @Html.ActionLink(GlobalRes.SeeBasket, "Index", "Basket")<text> |</text>
+                    }
+                    @Html.ActionLink("Ru", ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values.CreateLanguageRoute("ru")) |
+                    @Html.ActionLink("En", ViewContext.RouteData.Values["action"].ToString(), ViewContext.RouteData.Values.CreateLanguageRoute("en"))
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="middle">
+                <div class="left">
+                    <div class="logo">
+                        <img src="~/Images/logo.png" />
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="login-panel">
+                        @Html.Partial("_AccountPanelPartial")
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <div id="basket"></div>
+                        }
+                    </div>
+                    <div class="menu">
+                        <ul>
+                            <li>@Html.ActionLink(GlobalRes.GamesTitle, "Index", "Game")</li>
+                            <li><a href="#">@GlobalRes.Services</a></li>
+                            <li><a href="#">@GlobalRes.CaseStudies</a></li>
+                            <li><a href="#">@GlobalRes.Shippers</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="banner">
+                @{
+                    var number = new Random().Next(3);
+                    var urlPoster = string.Format(Url.Content("~/Images/logos/poster{0}.jpg"), number);
+                    var urlMonitor = string.Format(Url.Content("~/Images/logos/mac{0}.png"), number);
+                    
+                }
+                <img class="poster" src="@urlPoster"/>
+                <img class="monitor" src="@urlMonitor"/>
+            </div>
+        </header>
+        <div id="main-content">
+            @if (IsSectionDefined("GameFilter"))
+            {
+                @RenderSection("GameFilter")
+            }
+            else
+            {
+                <div id="right-sitebar">
+                    <h2>We knowed em'll</h2>
+                    <div>
+                        <img src="~/Images/publ1.png" />
+                        <img src="~/Images/publ2.png" />
+                    </div>
+                </div>
+                <div id="center-content">
+                    @RenderBody()
+                </div>
+            }
+            <div class="clearfix"></div>
+            <div class="cols">
+                <div class="col message">
+                    <header>
+                        <div class="icon">
+                            <img src="~/Images/message.png" />
+                        </div>
+                        <div class="title">Get in touch</div>
+                    </header>
+                    <div class="content">
+                        <div class="contact-item">
+                            <label>@GlobalRes.CommentName: </label>
+                            <input type="text" />
+                        </div>
+                        <div class="contact-item">
+                            <label>Email: </label>
+                            <input type="text" />
+                        </div>
+                        <div class="contact-item">
+                            <label>@GlobalRes.Body: </label>
+                            <textarea></textarea>
+                        </div>
+                        <div class="submit">
+                            <button>@GlobalRes.Submit</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col twitter">
+                    <header>
+                        <div class="icon">
+                            <img src="~/Images/twitter.png" />
+                        </div>
+                        <div class="title">Twitter updates</div>
+                    </header>
+                    <div class="content">
+                        <div class="twits">
+                            <div class="twit">
+                                Live from Apple's iPhone OS 4 event! - Engadget
+                                <a href="http://goo.gl/eJVm">http://goo.gl/eJVm</a>
+                                <div class="date">about 1 hour ago reply</div>
+                            </div>
+                            <div class="twit">
+                                Reading '50 New Free High-Quality Icon Sets (with Easter Icons!)'
+                                <a href="http://goo.gl/eJVm">http://goo.gl/eJVm</a>
+                                <div class="date">about 1 hour ago reply</div>
+                            </div>
+                            <div class="twit">
+                                Photoshop tutorial – creating green grass
+                                <a href="http://goo.gl/eJVm">http://goo.gl/eJVm</a>
+                                <div class="date">about 1 hour ago reply</div>
+                            </div>
+                        </div>
+                        <div class="submit">
+                            <button>Follow us</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col blog">
+                    <header>
+                        <div class="icon">
+                            <img src="~/Images/blog.png" />
+                        </div>
+                        <div class="title">From the blog</div>
+                    </header>
+                    <div class="content">
+                        <div class="blog-items">
+                            <div class="item">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+                            </div>
+                            <div class="item">
+                                Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+                            </div>
+                            <div class="item">
+                                Ruis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </div>
+                            <div class="item">
+                                cillom dolore eu fugiat rulla pariatur. Excepteur sint.
+                            </div>
+                        </div>
+                        <div class="submit">
+                            <button>Visit blog</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <footer>
+            <div class="left">
+                <div class="copyright">
+                    &copy; 2015 Stanislav Zadorozhnii | All Rights Reserved
+                    <br/>
+                    <br/>
+                    <p>
+                        Stas company bla bla bla, Inc
+                    </p>
+                </div>
+            </div>
+            <div class="right">
+                <div class="left footer-menu">
+                    <h3>Site Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Privay &amp; Security</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="#">Personal Finance Blog</a></li>
+                        <li><a href="#">Site Map</a></li>
+                    </ul>
+                </div>
+                <div class="right footer-menu">
+                    <h3>Company Inforamtion</h3>
+                    <ul>
+                        <li><a href="#">About What</a></li>
+                        <li><a href="#">Awards</a></li>
+                        <li><a href="#">Reviews</a></li>
+                        <li><a href="#">Testimonials</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </footer>
+    </div>
+
+    <script src="~/Scripts/jquery.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/basket.js"></script>
+    @RenderSection("Scripts", false)
+
+</body>
+</html>

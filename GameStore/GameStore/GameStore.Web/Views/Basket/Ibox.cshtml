@@ -1,0 +1,37 @@
+﻿@using GameStore.Web.App_LocalResources
+@model GameStore.Web.Models.IboxViewModel
+
+@{
+    ViewBag.Title = "Ibox";
+}
+
+<h2>Ibox</h2>
+
+<fieldset>
+    <legend>Ibox</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.OrderId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OrderId)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.CustomerId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CustomerId)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Sum)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Sum)
+    </div>
+</fieldset>
+@using (Html.BeginForm("Pay", "Basket"))
+{
+    <input type="submit" value="@GlobalRes.Pay" />
+}

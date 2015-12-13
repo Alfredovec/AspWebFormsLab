@@ -1,0 +1,60 @@
+﻿@using GameStore.Web.App_LocalResources
+@using GameStore.Web.Models
+@model GameStore.Web.Models.CardViewModel
+
+@{
+    ViewBag.Title = Model.CardType == CardType.Visa ? "Visa" : "Master card";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Pay", "Basket"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    @Html.HiddenFor(model=>model.CardType)
+
+    <fieldset>
+        <legend>@ViewBag.Title</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.CardNumber)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CardNumber)
+            @Html.ValidationMessageFor(model => model.CardNumber)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DateOfExpire)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DateOfExpire)
+            @Html.ValidationMessageFor(model => model.DateOfExpire)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cvc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Cvc)
+            @Html.ValidationMessageFor(model => model.Cvc)
+        </div>
+
+        <p>
+            <input type="submit" value="@GlobalRes.Pay" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink(GlobalRes.BackToList, "Index")
+</div>

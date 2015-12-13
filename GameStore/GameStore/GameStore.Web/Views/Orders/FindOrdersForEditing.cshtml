@@ -1,0 +1,43 @@
+﻿@using GameStore.Web.App_LocalResources
+@using GameStore.Web.Models
+@model IEnumerable<GameStore.Web.Models.OrderViewModel>
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </th>
+        <th></th>
+        <th>@Html.DisplayNameFor(model => model.OrderStatus)</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CustomerId)
+            </td>
+            <td>@Html.Partial("_OrderDetailsPartial", item.OrderDetails)</td>
+            <td>
+                <div>
+                    @Html.DisplayFor(modelItem => item.OrderStatus)
+                </div>
+                @if (item.OrderStatus == OrderStatus.Payed)
+                {
+                    using(Html.BeginForm("Shipp","Basket"))
+                    {
+                        @Html.Hidden("Id", item.Id)
+                        <input type="submit" value="@GlobalRes.Shipp"/>
+                    }
+                }
+            </td>
+        </tr>
+    }
+
+</table>

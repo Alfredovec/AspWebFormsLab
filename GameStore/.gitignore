@@ -1,0 +1,11 @@
+﻿################################################################################
+# Данный GITIGNORE-файл был автоматически создан Microsoft(R) Visual Studio.
+################################################################################
+
+/GameStore/Logger/obj/Debug
+/GameStore/Models/obj/Debug
+/GameStore/Test/obj/Debug
+/GameStore/packages
+/BankService/BankService/bin
+/BankService/BankService/obj/Debug
+*.user

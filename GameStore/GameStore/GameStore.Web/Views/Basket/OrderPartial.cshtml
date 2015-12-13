@@ -1,0 +1,30 @@
+﻿@using GameStore.Web.App_LocalResources
+@model GameStore.Web.Models.OrderViewModel
+
+<h2>@GlobalRes.Basket</h2>
+
+<fieldset>
+    <legend>@GlobalRes.Order</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Date)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.CustomerId)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CustomerId)
+    </div>
+    @if (Model.OrderDetails.Count != 0)
+    {
+        @Html.Partial("_OrderDetailsPartial", Model.OrderDetails);
+    }
+
+    <div>
+        @Html.ActionLink(GlobalRes.MakeOrder, "PreparePayment")
+    </div>
+</fieldset>

@@ -1,0 +1,24 @@
+﻿@using GameStore.Web.App_LocalResources
+@model GameStore.Web.Models.OrderViewModel
+
+@{
+    ViewBag.Title = GlobalRes.Basket;
+}
+
+@if (TempData.ContainsKey("ResultPayment"))
+{
+    <p>
+        @TempData["ResultPayment"]
+    </p>
+}
+
+@if (Model == null)
+{
+    @Html.Partial("Empty")
+}
+else
+{
+    @Html.Partial("OrderPartial");
+}
+
+@Html.ActionLink(GlobalRes.GoToMain, "Index", "Game")

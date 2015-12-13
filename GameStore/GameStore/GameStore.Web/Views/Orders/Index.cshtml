@@ -1,0 +1,48 @@
+﻿@using GameStore.Web.App_LocalResources
+@model GameStore.Web.Models.DateDiaposonViewModel
+
+@{
+    ViewBag.Title = GlobalRes.Orders;
+}
+
+<link href="~/Content/ordersHistory.css" rel="stylesheet" />
+
+<h2>@GlobalRes.Orders</h2>
+@using (Ajax.BeginForm("FindOrdersForEditing", new AjaxOptions
+{
+    UpdateTargetId = "result",
+    LoadingElementId = "loading",
+    OnBegin = "OnBegin",
+    OnComplete = "OnComplete"
+}))
+{
+    <fieldset>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StartDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StartDate)
+            @Html.ValidationMessageFor(model => model.StartDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.EndDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EndDate)
+            @Html.ValidationMessageFor(model => model.EndDate)
+        </div>
+    </fieldset>
+
+    <input type="submit" value="@GlobalRes.Find" />
+}
+<div id="result">
+</div>
+<div id="loading" style="display: none">
+    <img src="~/Images/@GlobalRes.Loading" />
+</div>
+
+@section Scripts
+{
+    <script src="~/Scripts/ordersAjax.js"></script>
+}

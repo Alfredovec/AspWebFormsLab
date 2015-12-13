@@ -1,0 +1,41 @@
+﻿@using GameStore.Web.App_LocalResources
+@model GameStore.Web.Models.UserDetailsViewModel
+
+@{
+    ViewBag.Title = GlobalRes.Delete;
+}
+
+<h2>@GlobalRes.Delete</h2>
+
+<h3>@GlobalRes.AreYouSureToDelete</h3>
+<fieldset>
+    <legend>@GlobalRes.Details</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Roles)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Roles)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(model=>model.Id)
+    <p>
+        <input type="submit" value="@GlobalRes.Delete" />
+    </p>
+}

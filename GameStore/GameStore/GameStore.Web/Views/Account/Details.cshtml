@@ -1,0 +1,37 @@
+﻿@using GameStore.Web.App_LocalResources
+@model GameStore.Web.Models.UserDetailsViewModel
+
+@{
+    ViewBag.Title = GlobalRes.Details;
+}
+
+<h2>@GlobalRes.Details</h2>
+
+<fieldset>
+    <legend>@GlobalRes.Details</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Roles)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Roles)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink(GlobalRes.Edit, "Edit", new { id=Model.Id }) |
+    @Html.ActionLink(GlobalRes.BackToList, "Users")
+</p>
